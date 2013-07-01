@@ -1,0 +1,3 @@
+[submodule ".emacs.d/repos/phpplus-mode"]
+	path = .emacs.d/repos/phpplus-mode
+	url = git@github.com:echosa/phpplus-mode.git

@@ -1,0 +1,13 @@
+\#*#
+*~
+*.elc
+.emacs.d/ac-comphist.dat
+.emacs.d/auto-save-list/**
+.emacs.d/elpa/archives/**
+
+.DS_Store
+.svn
+*.o
+.zsh_history
+.zshrc.local
+.ssh

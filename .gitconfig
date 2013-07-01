@@ -1,11 +1,11 @@
 [include]
-	path = .gitconfig.local
+        path = .gitconfig.local
 [user]
-	name = yotchang
-	email = zh1bvtan1@gmail.com
+        name = yotchang
+        email = zh1bvtan1@gmail.com
 [color]
-	ui = auto
+        ui = auto
 [core]
-	excludesfile = ~/.gitignore
-	quotepath = false
-	autocrlf = input
+        excludesfile = ~/.gitignore
+        quotepath = false
+        autocrlf = input

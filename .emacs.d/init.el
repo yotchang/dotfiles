@@ -15,7 +15,7 @@
 
 ;; load-pathに追加するフォルダ
 ;; 2つ以上フォルダを指定する場合の引数 => (add-to-load-path "elisp" "xxx" "xxx")
-(add-to-load-path "elisp" "conf")
+(add-to-load-path "elisp" "conf" "repos")
 
 ;; ------------------------------------------------------------------------
 ;; @ ELPA

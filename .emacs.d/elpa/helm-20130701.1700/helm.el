@@ -87,7 +87,7 @@ Run each function of FUNCTIONS list in turn when called within DELAY seconds."
     (unless next
       (set iterator (helm-iter-list (funcall fn)))
       (setq next (helm-iter-next (symbol-value iterator))))
-    (and next (eval iterator) (funcall (nth (1- next) functions)))
+    (and next (eval iterator) (call-interactively (nth (1- next) functions)))
     (when delay (run-with-idle-timer delay nil `(lambda ()
                                                   (setq ,iterator nil))))))
 
@@ -850,7 +850,7 @@ not `exit-minibuffer' or unwanted functions."
 
 (defmacro with-helm-temp-hook (hook &rest body)
   "Execute temporarily BODY as a function for HOOK."
-  (declare (indent 0) (debug t))
+  (declare (indent 1) (debug t))
   (let ((fun (gensym "helm-hook")))
     `(progn
        (defun ,fun ()

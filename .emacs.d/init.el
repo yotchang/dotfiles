@@ -31,7 +31,6 @@
 ;; 各種設定ファイル
 (load "init-auto-complete")
 (load "init-helm")
-(load "init-php+-mode")
 
 ;; 表示設定
 ;; 行番号・桁番号をモードラインに表示する

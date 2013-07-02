@@ -30,7 +30,7 @@
 ;; auto-install
 (require 'auto-install)
 (setq auto-install-directory (concat user-emacs-directory "auto-install"))
-(auto-install-update-emacswiki-package-name t)
+;(auto-install-update-emacswiki-package-name t)
 (auto-install-compatibility-setup)
 
 

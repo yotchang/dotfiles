@@ -15,10 +15,11 @@
 
 ;; load-pathに追加するフォルダ
 ;; 2つ以上フォルダを指定する場合の引数 => (add-to-load-path "elisp" "xxx" "xxx")
-(add-to-load-path "elisp" "conf" "repos")
+(add-to-load-path "elisp" "auto-install" "repos" "conf")
+
 
 ;; ------------------------------------------------------------------------
-;; @ ELPA
+;; @ Package
 ;; ELPAの設定
 (when (require `package nil t)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -26,12 +27,19 @@
   (setq package-user-dir (concat user-emacs-directory "elpa"))
   (package-initialize))
 
+;; auto-install
+(require 'auto-install)
+(setq auto-install-directory (concat user-emacs-directory "auto-install"))
+(auto-install-update-emacswiki-package-name t)
+(auto-install-compatibility-setup)
+
 
 ;; ------------------------------------------------------------------------
 ;; @ Config
 ;; 各種設定ファイル
 (load "init-auto-complete")
 (load "init-helm")
+(load "init-php-mode")
 
 ;; 表示設定
 ;; 行番号・桁番号をモードラインに表示する

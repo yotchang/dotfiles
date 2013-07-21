@@ -105,19 +105,9 @@ setopt path_dirs
 #
 [ -f $ZSH_HOME/.zshrc.alias ] && source $ZSH_HOME/.zshrc.alias
 
-case "${OSTYPE}" in
-# MacOSX
-darwin*)
-    # ここに設定
-    [ -f $ZSH_HOME/.zshrc.osx ] && source $ZSH_HOME/.zshrc.osx
-    ;;
-# Linux
-linux*)
-    # ここに設定
-    [ -f $ZSH_HOME/.zshrc.linux ] && source $ZSH_HOME/.zshrc.linux
-    ;;
-esac
+## プラットフォーム設定
+[ -f "$ZSH_HOME/.zshrc.$PLATFORM" ] && source "$ZSH_HOME/.zshrc.$PLATFORM" 
 
-# local固有設定
+# ローカル固有設定
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local

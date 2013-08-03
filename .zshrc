@@ -1,4 +1,7 @@
 
+VIRTUALE_ENV_WRAPPER_WHICH=`which virtualenvwrapper.sh`
+[ -f $VIRTUALE_ENV_WRAPPER_WHICH ] && source $VIRTUALE_ENV_WRAPPER_WHICH
+
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
 setopt transient_rprompt
@@ -103,11 +106,15 @@ setopt path_dirs
 
 ## alias設定
 #
-[ -f $ZSH_HOME/.zshrc.alias ] && source $ZSH_HOME/.zshrc.alias
+[ -f "$ZSH_HOME/.zshrc.alias" ] && source "$ZSH_HOME/.zshrc.alias"
+
+# antigen用の設定
+[ -f "$HOME/.zshrc.antigen" ] && source "$HOME/.zshrc.antigen"
 
 ## プラットフォーム設定
+#
 [ -f "$ZSH_HOME/.zshrc.$PLATFORM" ] && source "$ZSH_HOME/.zshrc.$PLATFORM" 
 
 # ローカル固有設定
 #
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f "$ZSH_HOME/.zshrc.local" ] && source "$ZSH_HOME/.zshrc.local"

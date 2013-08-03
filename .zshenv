@@ -5,17 +5,24 @@ export ZSH_HOME=~/dotfiles
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
 
-# create nicer name
-if [[ "$OS" == 'Darwin' ]];then
-  PLATFORM='osx'
-elif [[ "$OS" == 'Linux' ]];then
-  PLATFORM='linux'
-fi
+# Pythonのvirtualenv設定
+[ -d "$HOME/.virtualenvs" ] && export WORKON_HOME=$HOME/.virtualenv
+
+case $OSTYPE in
+  linux*)
+    PLATFORM='linux'
+  ;;
+  darwin*)
+    PLATFORM='osx'
+  ;;
+esac
 
 export PLATFORM
 
 # プラットフォーム固有設定
+#
 [ -f "$ZSH_HOME/.zshenv.$PLATFORM" ] && source "$ZSH_HOME/.zshenv.$PLATFORM"
 
 ## ローカル固有設定
-[ -f ~/.zshenv.local ] && source ~/.zshenv.local
+#
+[ -f "$ZSH_HOME/.zshenv.local" ] && source "$ZSH_HOME/.zshenv.local"

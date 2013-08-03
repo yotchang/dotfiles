@@ -12,3 +12,4 @@
 .zsh_history
 .zshrc.local
 .ssh
+./virtualenvs/**

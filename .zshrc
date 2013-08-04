@@ -1,4 +1,22 @@
 
+# antigen設定
+if [[ -f $ZSH_HOME/antigen/antigen.zsh ]]; then 
+  source $ZSH_HOME/antigen/antigen.zsh
+
+  antigen-lib
+  antigen-bundles <<EOBUNDLES
+  brew
+  git
+  github
+  osx
+  pip
+  python
+EOBUNDLES
+
+  antigen-apply
+fi
+
+# Python virtualenv設定
 VIRTUALE_ENV_WRAPPER_WHICH=`which virtualenvwrapper.sh`
 [ -f $VIRTUALE_ENV_WRAPPER_WHICH ] && source $VIRTUALE_ENV_WRAPPER_WHICH
 

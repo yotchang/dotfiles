@@ -1,7 +1,7 @@
 [include]
         path = .gitconfig.local
 [user]
-        name = yotchang
+        name = yotchang4s
         email = zh1bvtan1@gmail.com
 [color]
         ui = auto

@@ -21,9 +21,6 @@ fi
 VIRTUALE_ENV_WRAPPER_WHICH=`which virtualenvwrapper.sh`
 [ -f $VIRTUALE_ENV_WRAPPER_WHICH ] && source $VIRTUALE_ENV_WRAPPER_WHICH
 
-# pythonbrewの設定
-[ -f $HOME/.pythonbrew/etc/bashrc ] && source $HOME/.pythonbrew/etc/bashrc
-
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
 setopt transient_rprompt

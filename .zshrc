@@ -3,7 +3,8 @@
 if [[ -f $ZSH_HOME/antigen/antigen.zsh ]]; then 
   source $ZSH_HOME/antigen/antigen.zsh
 
-  antigen-lib
+  antigen use oh-my-zsh
+
   antigen-bundles <<EOBUNDLES
   brew
   git
@@ -19,6 +20,9 @@ fi
 # Python virtualenv設定
 VIRTUALE_ENV_WRAPPER_WHICH=`which virtualenvwrapper.sh`
 [ -f $VIRTUALE_ENV_WRAPPER_WHICH ] && source $VIRTUALE_ENV_WRAPPER_WHICH
+
+# pythonbrewの設定
+[ -f $HOME/.pythonbrew/etc/bashrc ] && source $HOME/.pythonbrew/etc/bashrc
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
@@ -69,7 +73,7 @@ setopt pushd_ignore_dups
 setopt correct
 
 # コマンドライン全てのスペルチェックをする
-setopt correct_all
+#setopt correct_all
 
 # 上書きリダイレクトの禁止
 setopt no_clobber

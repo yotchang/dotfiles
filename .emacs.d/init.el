@@ -1,5 +1,13 @@
 ; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 
+;;; 日本語環境
+(set-locale-environment nil)
+(set-language-environment "Japanese")
+(set-terminal-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(prefer-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
+
 ;; ------------------------------------------------------------------------
 ;; @ load-path
 ;; load-pathの設定
@@ -15,52 +23,11 @@
 
 ;; load-pathに追加するフォルダ
 ;; 2つ以上フォルダを指定する場合の引数 => (add-to-load-path "elisp" "xxx" "xxx")
-(add-to-load-path "elisp" "auto-install" "repos" "conf")
+(add-to-load-path "elisp" "repos")
 
+;; init-loader
+(require 'init-loader)
+(setq init-loader-show-log-after-init nil)
+(init-loader-load "~/.emacs.d/inits")
 
-;; ------------------------------------------------------------------------
-;; @ Package
-;; ELPAの設定
-(when (require `package nil t)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-  (setq package-user-dir (concat user-emacs-directory "elpa"))
-  (package-initialize))
-
-;; auto-install
-(require 'auto-install)
-(setq auto-install-directory (concat user-emacs-directory "auto-install"))
-;(auto-install-update-emacswiki-package-name t)
-(auto-install-compatibility-setup)
-
-
-;; ------------------------------------------------------------------------
-;; @ Config
-;; 各種設定ファイル
-(load "init-auto-complete")
-(load "init-helm")
-(load "init-php-mode")
-
-;; キー設定
-;; 反対側のウィンドウにいけるように
-(setq windmove-wrap-around t)
-;; C-M-{h,j,k,l}でウィンドウ間を移動
-(define-key global-map (kbd "C-M-k") 'windmove-up)
-(define-key global-map (kbd "C-M-j") 'windmove-down)
-(define-key global-map (kbd "C-M-l") 'windmove-right)
-(define-key global-map (kbd "C-M-h") 'windmove-left)
-
-;; 表示設定
-;; 行番号・桁番号をモードラインに表示する
-(line-number-mode t)
-(column-number-mode t)
-
-;; タブ文字の表示幅
-(setq-default tab-width 4)
-;; ------------------------------------------------------------------------
-;; @ Theme
-;; テーマの設定
-;;(load-theme 'misterioso t)
-;;(enable-theme 'misterioso)
-(custom-set-variables
- '(custom-enabled-themes (quote (tango-dark))))
+(load-theme `misterioso t)

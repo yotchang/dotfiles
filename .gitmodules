@@ -1,6 +1,9 @@
-[submodule ".emacs.d/repos/phpplus-mode"]
-	path = .emacs.d/repos/phpplus-mode
-	url = git@github.com:echosa/phpplus-mode.git
 [submodule "antigen"]
 	path = antigen
 	url = https://github.com/zsh-users/antigen.git
+[submodule ".emacs.d/repos/init-loader"]
+	path = .emacs.d/repos/init-loader
+	url = https://github.com/emacs-jp/init-loader.git
+[submodule ".emacs.d/repos/ensime"]
+	path = .emacs.d/repos/ensime
+	url = https://github.com/aemoncannon/ensime.git

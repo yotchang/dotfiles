@@ -1,21 +1,5 @@
-
-# antigen設定
-if [[ -f $ZSH_HOME/antigen/antigen.zsh ]]; then 
-  source $ZSH_HOME/antigen/antigen.zsh
-
-  antigen use oh-my-zsh
-
-  antigen-bundles <<EOBUNDLES
-  brew
-  git
-  github
-  osx
-  pip
-  python
-EOBUNDLES
-
-  antigen-apply
-fi
+# antigen用の設定
+[ -f "$ZSH_HOME/.zshrc.antigen" ] && source "$ZSH_HOME/.zshrc.antigen"
 
 # Python virtualenv設定
 VIRTUALE_ENV_WRAPPER_WHICH=`which virtualenvwrapper.sh`
@@ -127,8 +111,9 @@ setopt path_dirs
 #
 [ -f "$ZSH_HOME/.zshrc.alias" ] && source "$ZSH_HOME/.zshrc.alias"
 
-# antigen用の設定
-[ -f "$HOME/.zshrc.antigen" ] && source "$HOME/.zshrc.antigen"
+## functionの設定
+#
+[ -f "$ZSH_HOME/.zshrc.function" ] && source "$ZSH_HOME/.zshrc.function"
 
 ## プラットフォーム設定
 #

@@ -1,0 +1,18 @@
+# antigen設定
+if [[ -f $ZSH_HOME/antigen/antigen.zsh ]]; then
+  source $ZSH_HOME/antigen/antigen.zsh
+
+  antigen use oh-my-zsh
+
+  antigen-bundles <<EOBUNDLES
+  brew
+  git
+  github
+  osx
+  pip
+  python
+  vagrant
+EOBUNDLES
+
+  antigen-apply
+fi

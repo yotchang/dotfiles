@@ -1,9 +1,11 @@
-# antigen用の設定
+# antigen 設定
 [ -f "$ZSH_HOME/.zshrc.antigen" ] && source "$ZSH_HOME/.zshrc.antigen"
 
-# Python virtualenv設定
-VIRTUALE_ENV_WRAPPER_WHICH=`which virtualenvwrapper.sh`
-[ -f $VIRTUALE_ENV_WRAPPER_WHICH ] && source $VIRTUALE_ENV_WRAPPER_WHICH
+# Python virtualenv 設定
+[ -x `whence -p virtualenvwrapper.sh` ] && source virtualenvwrapper.sh
+
+# Ruby rbenv 設定
+[ -x `whence -p rbenv` ] && eval "$(rbenv init -)"
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
@@ -30,7 +32,8 @@ case ${UID} in
     RED="%{${fg[red]}%}"
     CYAN="%{${fg[cyan]}%}"
     WHITE="%{${fg[white]}%}"
-    POH="(,,ﾟДﾟ) $"
+    #POH="(,,ﾟДﾟ) $"
+    POH="%(?.${GREEN}:).${RED}:()"
 
     #
     # Prompt

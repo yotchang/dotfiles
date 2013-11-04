@@ -8,16 +8,11 @@ export LESSCHARSET=utf-8
 [ -d "/usr/local/bin" ] && export PATH="/usr/local/bin:$PATH"
 [ -d "/usr/local/sbin" ] && export PATH="/usr/local/sbin:$PATH"
 
-# Pythonのvirtualenv設定
-[ -d "$HOME/.virtualenvs" ] && export WORKON_HOME=$HOME/.virtualenv
+# Python virtualenv 設定
+[ -x `whence -p virtualenvwrapper.sh` ] && export WORKON_HOME=$HOME/.virtualenvs
 
-# Rubyのrbenv設定
-which rbenv > /dev/null
-erbenv=$?
-if [[ $ervenv -eq 0 ]]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
+# Ruby rbenv 設定
+[ -x `whence -p rbenv` ] && export PATH="$HOME/.rbenv/bin:$PATH"
 
 case $OSTYPE in
   linux*)

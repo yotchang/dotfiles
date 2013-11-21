@@ -1,3 +1,7 @@
+#Java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA=$JAVA_HOME/bin
+
 # Android
 export ANDROID_HOME="$HOME/android-sdks"
 

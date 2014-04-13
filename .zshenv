@@ -10,10 +10,10 @@ typeset -U path cdpath fpath manpath
 ## sudo用のpathを設定
 typeset -xT SUDO_PATH sudo_path
 typeset -U sudo_path
-sudo_path=({/usr/local,/usr,}/sbin(N-/))
+sudo_path=({/usr/local,/usr}/sbin(N-/))
 
 # pathを設定
-path=({/usr/local/bin,/usr}/bin(N-/) ${path})
+path=({/usr/local,/usr}/bin(N-/) ${path})
 
 ## function
 source "$ZSH_HOME/.zshenv.function"

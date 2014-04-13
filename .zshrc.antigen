@@ -5,13 +5,23 @@ if [[ -f $ZSH_HOME/antigen/antigen.zsh ]]; then
   antigen use oh-my-zsh
 
   antigen-bundles <<EOBUNDLES
+  osx
+  debian
+  gnu-utils
+  docker
   brew
+  brew-cask
   git
   github
-  osx
-  pip
+  scala
+  sbt
+  ruby
+  rbenv
+  gem
   python
-  vagrant
+  pip
+  virtualenv
+  virtualenvwrapper
 EOBUNDLES
 
   antigen-apply

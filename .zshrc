@@ -1,11 +1,5 @@
 # antigen 設定
-[ -f "$ZSH_HOME/.zshrc.antigen" ] && source "$ZSH_HOME/.zshrc.antigen"
-
-# Python virtualenv 設定
-[ -x `whence -p virtualenvwrapper.sh` ] && source virtualenvwrapper.sh
-
-# Ruby rbenv 設定
-[ -x `whence -p rbenv` ] && eval "$(rbenv init -)"
+source "$ZSH_HOME/.zshrc.antigen"
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
@@ -113,10 +107,6 @@ setopt path_dirs
 ## alias設定
 #
 [ -f "$ZSH_HOME/.zshrc.alias" ] && source "$ZSH_HOME/.zshrc.alias"
-
-## functionの設定
-#
-[ -f "$ZSH_HOME/.zshrc.function" ] && source "$ZSH_HOME/.zshrc.function"
 
 ## プラットフォーム設定
 #

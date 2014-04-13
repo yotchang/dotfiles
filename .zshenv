@@ -1,18 +1,37 @@
 export ZSH_HOME=~/dotfiles
 
 ## LANG
-#
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
 
-[ -d "/usr/local/bin" ] && export PATH="/usr/local/bin:$PATH"
-[ -d "/usr/local/sbin" ] && export PATH="/usr/local/sbin:$PATH"
+# 重複パスを登録しない
+typeset -U path cdpath fpath manpath
 
-# Python virtualenv 設定
-[ -x `whence -p virtualenvwrapper.sh` ] && export WORKON_HOME=$HOME/.virtualenvs
+## sudo用のpathを設定
+typeset -xT SUDO_PATH sudo_path
+typeset -U sudo_path
+sudo_path=({/usr/local,/usr,}/sbin(N-/))
 
-# Ruby rbenv 設定
-[ -x `whence -p rbenv` ] && export PATH="$HOME/.rbenv/bin:$PATH"
+# pathを設定
+path=({/usr/local/bin,/usr}/bin(N-/) ${path})
+
+## function
+source "$ZSH_HOME/.zshenv.function"
+
+# Python virtualenv
+if is_executable "/usr/local/bin/python3"; then
+  if is_executable "virtualenvwrapper.sh"; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+    export WORKON_HOME=$HOME/.virtualenvs
+    source "virtualenvwrapper.sh"
+  fi
+fi
+
+# Ruby rbenv
+if is_executable "rbenv"; then
+  path=("$HOME/.rbenv/bin"(N-/) ${path})
+  eval "$(rbenv init - zsh)"
+fi
 
 case $OSTYPE in
   linux*)
@@ -25,10 +44,10 @@ esac
 
 export PLATFORM
 
-# プラットフォーム固有設定
+# Plathome
 #
 [ -f "$ZSH_HOME/.zshenv.$PLATFORM" ] && source "$ZSH_HOME/.zshenv.$PLATFORM"
 
-## ローカル固有設定
+## local
 #
-[ -f "$ZSH_HOME/.zshenv.local" ] && source "$ZSH_HOME/.zshenv.local"
+[ -f "$HOME/.zshenv.local" ] && source "$HOME/.zshenv.local"

@@ -1,3 +1,8 @@
+## 実行可能か
+function is_executable() {
+    [[ -n "`whence $1`" ]]
+}
+
 function gem(){
   if [[ -x `whence -p $HOME/.rbenv/shims/gem` ]]; then
     $HOME/.rbenv/shims/gem $*
@@ -10,3 +15,4 @@ function gem(){
     gem $*
   fi
 }
+

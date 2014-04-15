@@ -19,12 +19,15 @@ path=({/usr/local,/usr}/bin(N-/) ${path})
 source "$ZSH_HOME/.zshenv.function"
 
 # Python virtualenv
-if is_executable "/usr/local/bin/python3"; then
-  if is_executable "virtualenvwrapper.sh"; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-    export WORKON_HOME=$HOME/.virtualenvs
-    source "virtualenvwrapper.sh"
-  fi
+if is_executable "/usr/local/bin/python3" && \
+   is_executable "virtualenvwrapper.sh" ]; then
+
+  export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+fi
+
+if is_executable "virtualenvwrapper.sh"; then
+  export WORKON_HOME=$HOME/.virtualenvs
+  source "virtualenvwrapper.sh"
 fi
 
 # Ruby rbenv

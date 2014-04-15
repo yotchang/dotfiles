@@ -25,6 +25,7 @@ install brew-cask
 
 cleanup
 
+cask install mi
 cask install java
 cask install iterm2
 cask install emacs

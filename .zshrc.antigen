@@ -19,9 +19,9 @@ if [[ -f $ZSH_HOME/antigen/antigen.zsh ]]; then
   rbenv
   gem
   python
-  pip
-  virtualenv
-  virtualenvwrapper
+  #pip
+  #virtualenv
+  #virtualenvwrapper
 EOBUNDLES
 
   antigen-apply

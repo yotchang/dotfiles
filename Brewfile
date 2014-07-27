@@ -5,7 +5,8 @@ tap homebrew/binary
 tap homebrew/versions
 tap homebrew/dupes
 
-tap phinze/cask
+tap caskroom/cask
+
 tap josegonzalez/homebrew-php
 
 install zsh
@@ -15,11 +16,12 @@ install git
 install python3
 install rbenv
 install ruby-build
+install php55
 install groovy
 install gradle
 install scala
 install sbt
-install play
+install typesafe-activator
 
 install brew-cask
 
@@ -29,6 +31,7 @@ cask install mi
 cask install java
 cask install iterm2
 cask install emacs
+cask install karabiner
 cask install intellij-idea
 
 cask install cocoapacketanalyzer
@@ -37,5 +40,6 @@ cask install google-chrome
 cask install firefox
 cask install skype
 cask install adobe-reader
+cask install openoffice
 
 cask cleanup

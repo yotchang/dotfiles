@@ -1,13 +1,13 @@
 #Java
-java_home=(`/usr/libexec/java_home -v 1.8 2> /dev/null`(N-/))
-if [ -d "${java_home}" ]; then
+java_home=(`/usr/libexec/java_home -v 1.7 2> /dev/null`(N-/))
+if [[ -d "${java_home}" ]]; then
   export JAVA_HOME=${java_home}
   path=("${JAVA_HOME}/bin"(N-/) ${path})
 fi
 
 # Android
 android_home=("${HOME}/android-sdks"(N-/))
-if [ -d "${android_home}" ]; then
+if [[ -d "${android_home}" ]]; then
   export ANDROID_HOME=${android_home}
   path=("${ANDROID_HOME}/tools"(N-/) ${path})
   path=("${ANDROID_HOME}/platform-tools"(N-/) ${path})
@@ -15,3 +15,10 @@ fi
 
 # homwbrew-cask
 export HOMEBREW_CASK_OPTS="--caskroom=/usr/local/Caskroom"
+
+# nodebrew
+nodebrew_home=("${HOME}/.nodebrew"(N-/))
+if [[ -d "${nodebrew_home}" ]]; then
+  export NODEBREW_HOME=${nodebrew_home}
+  path=("${NODEBREW_HOME}/current/bin"(N-/) ${path})
+fi

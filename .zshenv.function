@@ -3,6 +3,27 @@ function is_executable() {
     [[ -n "`whence $1`" ]]
 }
 
+function is_linux() {
+    [[ `get_platform` == linux ]]
+}
+
+function is_osx() {
+    [[ `get_platform`  = osx ]]
+}
+
+function get_platform() {
+    case $OSTYPE in
+        linux*)
+            PLATFORM='linux'
+        ;;
+        darwin*)
+            PLATFORM='osx'
+        ;;
+    esac
+
+    echo $PLATFORM
+}
+
 function gem(){
   if [[ -x `whence -p $HOME/.rbenv/shims/gem` ]]; then
     $HOME/.rbenv/shims/gem $*

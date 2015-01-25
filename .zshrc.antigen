@@ -1,27 +1,33 @@
 # antigen設定
-if [[ -f $ZSH_HOME/antigen/antigen.zsh ]]; then
+if [[ -f "$ZSH_HOME/antigen/antigen.zsh" ]]; then
   source $ZSH_HOME/antigen/antigen.zsh
 
   antigen use oh-my-zsh
 
+  if is_osx; then
+    antigen-bundles <<EOBUNDLES
+    osx
+    brew
+    brew-cask
+EOBUNDLES
+  fi
+
   antigen-bundles <<EOBUNDLES
-  osx
-  debian
+  emacs
   gnu-utils
   docker
-  brew
-  brew-cask
   git
   github
+  aws
+  adb
   scala
   sbt
   ruby
   rbenv
   gem
   python
-  #pip
-  #virtualenv
-  #virtualenvwrapper
+  pip
+  pyenv
 EOBUNDLES
 
   antigen-apply

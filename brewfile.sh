@@ -7,6 +7,7 @@ brew tap homebrew/versions || true
 brew tap homebrew/dupes || true
 
 brew tap caskroom/cask || true
+brew tap caskroom/versions || true
 
 brew tap josegonzalez/homebrew-php || true
 
@@ -32,8 +33,9 @@ brew install brew-cask || true
 brew cleanup || true
 
 brew cask install mi || true
-brew cask install java || true
+brew cask install java6 || true
 brew cask install java7 || true
+brew cask install java || true
 brew cask install iterm2 || true
 brew cask install emacs || true
 brew cask install virtualbox || true
@@ -50,5 +52,7 @@ brew cask install adobe-reader || true
 brew cask install openoffice || true
 brew cask install gimp || true
 brew cask install xmind || true
+brew cask install miro || true
+brew cask install slack-beta || true
 
 brew cask cleanup || true

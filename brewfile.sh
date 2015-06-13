@@ -26,33 +26,38 @@ brew install gradle || true
 brew install scala || true
 brew install sbt || true
 brew install typesafe-activator || true
+brew install google-app-engine || true
+brew install heroku-toolbelt || true
 brew install nodebrew || true
-
 brew install brew-cask || true
 
 brew cleanup || true
 
 brew cask install mi || true
-brew cask install java6 || true
-brew cask install java7 || true
-brew cask install java || true
+brew cask install caskroom/versions/java6
+brew cask install caskroom/versions/java7
+brew cask install caskroom/versions/java8
+brew cask install google-cloud-sdk || true
 brew cask install iterm2 || true
 brew cask install emacs || true
 brew cask install virtualbox || true
 brew cask install boot2docker || true
 brew cask install karabiner || true
 brew cask install intellij-idea || true
+brew cask install googleappengine || true
 
 brew cask install cocoapacketanalyzer || true
 
 brew cask install google-chrome || true
-brew cask install firefox || true
+brew cask install firefox-ja || true
 brew cask install skype || true
 brew cask install adobe-reader || true
 brew cask install openoffice || true
 brew cask install gimp || true
 brew cask install xmind || true
 brew cask install miro || true
-brew cask install slack-beta || true
+brew cask install slack || true
+brew cask install asepsis || true
+brew cask install kindle || true
 
 brew cask cleanup || true

@@ -1,0 +1,5 @@
+gcs_path="${caskroom}/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+[ -f "${gcs_path}" ] && source "${gcs_path}"
+
+gcs_completion="${caskroom}/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+[ -f "${gcs_completion}" ] && source "${gcs_completion}"

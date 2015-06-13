@@ -5,6 +5,18 @@ if [[ -d "${java_home}" ]]; then
   path=("${JAVA_HOME}/bin"(N-/) ${path})
 fi
 
+#Maven
+if is_executable "mvn"; then
+  if is_executable "brew"; then
+    export M2_HOME=`brew --prefix maven`/libexec
+  fi
+fi
+
+# Docker
+if [ "`boot2docker status`" = "running" ]; then
+  eval $(boot2docker shellinit 2>/dev/null)
+fi
+
 # Android
 android_home=("${HOME}/android-sdks"(N-/))
 if [[ -d "${android_home}" ]]; then
@@ -14,7 +26,8 @@ if [[ -d "${android_home}" ]]; then
 fi
 
 # homwbrew-cask
-export HOMEBREW_CASK_OPTS="--caskroom=/usr/local/Caskroom"
+caskroom=/usr/local/Caskroom
+export HOMEBREW_CASK_OPTS="--caskroom=${caskroom}"
 
 # nodebrew
 nodebrew_home=("${HOME}/.nodebrew"(N-/))

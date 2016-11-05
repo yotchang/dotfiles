@@ -3,3 +3,6 @@ gcs_path="${caskroom}/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
 gcs_completion="${caskroom}/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 [ -f "${gcs_completion}" ] && source "${gcs_completion}"
+
+zsh_syntax_highlighting=/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f "${zsh_syntax_highlighting}" ] && source "${zsh_syntax_highlighting}"
